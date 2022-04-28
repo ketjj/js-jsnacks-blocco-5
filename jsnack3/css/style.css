@@ -1,0 +1,23 @@
+.box-result{
+  background-color: rgb(148, 245, 116);
+  color: rgb(66, 15, 91);
+  width: 50%;
+  margin: 20px auto;
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 6px rgb(83, 7, 83);
+}
+
+.box-result1{
+  background-color: rgb(96, 111, 184);
+  color: rgb(237, 237, 237);
+  width: 50%;
+  margin: 20px auto;
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 6px rgb(83, 7, 83);
+}

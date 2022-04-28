@@ -13,3 +13,6 @@ function reverseStringa(str){
 
   return reverseString;
 }
+
+
+const reversestringa = (str) => str.split('').reverse().join('');

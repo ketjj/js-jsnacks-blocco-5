@@ -4,7 +4,7 @@
 // Dividi in due array separati le zucchine che misurano meno o più di 15cm. Infine stampa separatamente quanto pesano i due gruppi di zucchine.
 
 
-const zucchina = [
+const zucchinaList = [
   {
     tipologia: 'romanesco',
     pesoingr: 35,
@@ -57,26 +57,26 @@ const zucchina = [
   } 
 ];
 
-const zucchineMeno15cm = [];
-const zucchinePiudi15cm = [];
+const zucchineMeno15cm = [], zucchinePiudi15cm = [];
 
 // console.log(zucchineMeno15cm);
 // console.log(zucchinePiudi15cm);
 
 
-for (let zucchinaIndex in zucchina) {
+for (let zucchina in zucchinaList) {
 
-  const zucchinaMisura = zucchina[zucchinaIndex];
-  console.log("Siamo alla Zucchina Numero " + zucchinaIndex + " con valore lunghezza: " + zucchina[zucchinaIndex].lunghezzaincm)
+  const zucchinaMisura = zucchinaList[zucchina];
+  // console.log("Siamo alla Zucchina Numero " + zucchinaIndex + " con valore lunghezza: " + zucchina[zucchinaIndex].lunghezzaincm)
 
-   if( zucchinaMisura.lunghezzaincm >= 15){
-     zucchinePiudi15cm.push(zucchinaMisura)
-   }
-   else{
-     zucchineMeno15cm.push(zucchinaMisura)
-   }
+  //  if( zucchinaMisura.lunghezzaincm >= 15){
+  //    zucchinePiudi15cm.push(zucchinaMisura)
+  //  }
+  //  else{
+  //    zucchineMeno15cm.push(zucchinaMisura)
+  //  }
+   
 
-  //zucchina[zucchinaIndex] = (zucchinaMisura.lunghezzaincm >= 15) ? zucchinePiudi15cm.push(zucchinaMisura.lunghezzaincm) : zucchineMeno15cm.push(zucchinaMisura.lunghezzaincm);
+  (zucchinaMisura.lunghezzaincm >= 15) ? zucchinePiudi15cm.push(zucchinaMisura) : zucchineMeno15cm.push(zucchinaMisura);
 
 }
 

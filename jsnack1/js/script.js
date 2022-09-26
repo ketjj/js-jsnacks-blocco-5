@@ -58,15 +58,11 @@ const zucchino = [
   } 
 ];
 
-  let totalWeight = 0;
 
-  // for (let i in zucchino) {
-  //   totalWeight += parseInt(zucchino[i].pesoingr);
-  // }
-
-  for (let zucchina of zucchino) {
-    totalWeight += parseInt(zucchina.pesoingr);
-  }
-
-  document.getElementById('result-firstsnack1').innerHTML = `La somma totale del peso delle zucchine è ${totalWeight} gr`;
-  // console.log(totalWeight);
+//console.log(zucchino);
+   let pesoTotale = 0;
+   for(let zucchina of zucchino){
+    pesoTotale += Number(zucchina.pesoingr);
+   }
+   document.getElementById('result-firstsnack1').innerHTML = `Il peso totale delle zucchine è ${pesoTotale}gr`;
+   // console.log(totalWeight);

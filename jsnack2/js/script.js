@@ -57,51 +57,25 @@ const zucchinaList = [
   } 
 ];
 
-const zucchineMeno15cm = [], zucchinePiudi15cm = [];
+const menoDi15cm = [];
+const piuDi15cm = [];
 
-// console.log(zucchineMeno15cm);
-// console.log(zucchinePiudi15cm);
-
-
-for (let zucchina in zucchinaList) {
-
-  const zucchinaMisura = zucchinaList[zucchina];
-  // console.log("Siamo alla Zucchina Numero " + zucchinaIndex + " con valore lunghezza: " + zucchina[zucchinaIndex].lunghezzaincm)
-
-  //  if( zucchinaMisura.lunghezzaincm >= 15){
-  //    zucchinePiudi15cm.push(zucchinaMisura)
-  //  }
-  //  else{
-  //    zucchineMeno15cm.push(zucchinaMisura)
-  //  }
-   
-
-  (zucchinaMisura.lunghezzaincm >= 15) ? zucchinePiudi15cm.push(zucchinaMisura) : zucchineMeno15cm.push(zucchinaMisura);
-
+for(let zucchina of zucchinaList){
+  if(zucchina.lunghezzaincm <=15){
+    menoDi15cm.push(zucchina.pesoingr)
+  }else if(zucchina.lunghezzaincm >15){
+    piuDi15cm.push(zucchina.pesoingr)
+  }
 }
 
-let tutteLeZucchinelunghe = 0;
-
-for(let zucchinaLunga of zucchinePiudi15cm){
-  tutteLeZucchinelunghe += parseInt(zucchinaLunga.lunghezzaincm);
-  
-  document.getElementById('result-zucchina1').innerHTML = "Misura Zucchine Lunghe " + tutteLeZucchinelunghe;
+function getSum(arr){
+   let total = 0;
+   for(let i of arr){
+   total += i;
+   }
+   return total;
 }
 
-// console.log("Misura Zucchine Lunghe " + tutteLeZucchinelunghe)
+document.getElementById('result-zucchina1').textContent = `Peso totale delle zucchine meno di 15cm è ${getSum(menoDi15cm)}kg`
 
-let tutteLeZucchinecorte = 0;
-
-// console.log("Misura Zucchine Lunghe PRE-for " + tutteZucchinelunghe)
-
-for(let zucchinaCorta of zucchineMeno15cm){
-  tutteLeZucchinecorte += parseInt(zucchinaCorta.lunghezzaincm);
-
-  document.getElementById('result-zucchina2').innerHTML = "Misura Zucchine Lunghe " + tutteLeZucchinecorte;
-
-  console.log(tutteLeZucchinecorte, 'xxxx');
-
-}
-
-// console.log(zucchineMeno15cm.length, 'Menooo');
-// console.log(zucchinePiudi15cm.length, 'Piuuuù');
+document.getElementById('result-zucchina2').textContent = `Peso totale delle zucchine più di 15cm è ${getSum(piuDi15cm)}kg`

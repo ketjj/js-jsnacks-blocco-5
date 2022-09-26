@@ -5,6 +5,10 @@
 const bicycleList = [
   {
     nome: 'xstyle',
+    pesoinkg: 11
+  },
+  {
+    nome: 'xstyle',
     pesoinkg: 10
   },
   {
@@ -26,20 +30,53 @@ const bicycleList = [
 
 ];
 
-const [nome, pesoinkg] = bicycleList;
+
 // console.log(nome);
 
-let pesoBici = [];
 
-for(let biciIndex in bicycleList) {
-  biciWeight = bicycleList[biciIndex].pesoinkg;
-  pesoBici.push(biciWeight);
-  
+let startBicycleWeight = bicycleList[0].pesoinkg;
+//console.log(startBicycleWeight)
+let lighBicycle = {};
 
-  
-  let biciPiùLeggera = Math.min(pesoBici);
-  //non mi funziona
 
+for(let bicycle of bicycleList){
+  //console.log(bicycle);
+  if(startBicycleWeight > bicycle.pesoinkg){
+    startBicycleWeight = bicycle.pesoinkg;
+    
+  } 
+}
+const myObject =  bicycleList.findIndex((bicycle) => bicycle.pesoinkg === startBicycleWeight);
+console.log(myObject);
+
+function printObject(array, num){
+  //let myObj = array[num];
+  let output = `La bici più leggera è '${array[num].nome}', con il perso di ${array[num].pesoinkg} kg`
+  return output;
 }
 
-// document.getElementById('result').innerHTML = `La bici più leggera pesa ${biciPiùLeggera} kg`;
+let outMsg = document.getElementById('result');
+outMsg.textContent = printObject(bicycleList, myObject);
+
+
+
+// let bicipiùleggera = {};
+
+// for(let bici in bicycleList) {
+//   const {pesoinkg} = bici;
+//   console.log(pesoinkg, 'xxxxxxxxxxxx');
+
+//   if(pesoBici > bici.pesoinkg) {
+//     pesoBici = pesoinkg;
+    
+//     printBicycle(biciIndex);
+    
+//   }
+//   //console.log(biciIndex, '-------------')
+// }
+  
+// printBicycle(bicipiùleggera);
+// function printBicycle(biciIndex){
+//   const {nome, pesoinkg} = biciIndex;
+//   document.getElementById('result').innerHTML  = `la bici pesa ${nome} con un peso di ${pesoinkg}`
+// }

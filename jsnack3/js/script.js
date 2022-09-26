@@ -1,15 +1,14 @@
 // Jsnack 3
 // Scrivi una funzione che accetti una stringa come argomento e la ritorni girata (es. Ciao -> oaiC)
 
+1.
+let word = 'Ciao';
+function reverseStr(str){
+  return str.split('').reverse().join('');
+}
+console.log(reverseStr(word));
 
 
-
-
-// function reverseStringa(str){
-//   return str.split('').reverse().join('');
-// }
-
-const parola = 'ciao'
-
-const reversestringa = (str) => str.split('').reverse().join('');
-console.log(reversestringa(parola));
+2. 
+const reverseString = (string) => string.split('').reverse().join('');
+console.log(reverseString('Salvatore'));
